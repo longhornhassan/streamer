@@ -18,7 +18,7 @@ getUserMedia({ video: true, audio: false }, function (err, stream) {
     var xhr = new XMLHttpRequest();
     document.getElementById('yourId').value = JSON.stringify(data)
 
-    xhr.open("POST", 'http://18290fcb.ngrok.io/updateAll', true);
+    xhr.open("POST", 'https://streamservice.herokuapp.com/updateAll', true);
 
     //Send the proper header information along with the request
     xhr.setRequestHeader("Content-Type", "application/json");
