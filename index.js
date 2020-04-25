@@ -50,11 +50,21 @@ app.post('/updateB', (req, res) => {
 }); 
 
 app.get('/hostA', (req, res) => {
-    res.status(200).send(JSON.stringify(hostA)); 
+    ret = '';
+    if(hostA !== ""){
+        ret = hostA; 
+        hostA = "";
+    }
+    res.status(200).send(JSON.stringify(ret)); 
 }); 
 
 app.get('/hostB', (req, res) => {
-    res.status(200).send(JSON.stringify(hostB));
+    ret = '';
+    if(hostB !== ""){
+        ret = hostB; 
+        hostB = "";
+    }
+    res.status(200).send(JSON.stringify(ret));
 }); 
 
 app.get('/resetA', (req, res) => {
