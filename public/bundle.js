@@ -10036,7 +10036,7 @@ var happens = (data) => {
   console.log(data);
 }
 
-getUserMedia({ video: true, audio: false }, function (err, stream) {
+getUserMedia({ video: true, audio: true }, function (err, stream) {
   if (err) return console.error(err)
 
   var Peer = require('simple-peer')
