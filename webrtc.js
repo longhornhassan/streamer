@@ -10,7 +10,7 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
   var Peer = require('simple-peer')
   var peer = new Peer({
     initiator: location.hash === '#init', //true of not, first peer (address)
-    trickle: true,
+    trickle: false,
     stream: stream
   })
 
