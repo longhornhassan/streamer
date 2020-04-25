@@ -32,6 +32,13 @@
       //     }
       // },1000 / 30);
 
+
+      var origin2 = "https://streamservice.herokuapp.com/resetB"; 
+      if(location.hash === '#init'){
+          origin2 = "https://streamservice.herokuapp.com/resetA";
+      }
+      xhr2.open('GET', origin2, true);
+
       
   </script>
 <div class="spinner-border" role="status">
