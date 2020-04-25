@@ -32,13 +32,13 @@
       //     }
       // },1000 / 30);
 
-
-      var origin2 = "https://streamservice.herokuapp.com/resetB"; 
+      var xhr3 = new XMLHttpRequest();
+      var origin3 = "https://streamservice.herokuapp.com/resetB"; 
       if(location.hash === '#init'){
-          origin2 = "https://streamservice.herokuapp.com/resetA";
+          origin3 = "https://streamservice.herokuapp.com/resetA";
       }
-      xhr2.open('GET', origin2, true);
-      console.log("reset " + origin);
+      xhr3.open('GET', origin3, true);
+      console.log("reset " + origin3);
 
       
   </script>
