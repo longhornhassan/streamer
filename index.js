@@ -36,17 +36,17 @@ app.post('/updateAll', (req,res) => {
     //console.log("HERE");
     console.log(req.body.data);
     io.emit("url", req.body.data); 
-    res.status(200).send(); 
+    return res.status(200); 
 });
 
 app.post('/updateA', (req, res) => {
     hostA = req.body.data; 
-    res.status(200).send;
+    return res.status(200);
 }); 
 
 app.post('/updateB', (req, res) => {
     hostB = req.body.data; 
-    res.status(200).send;
+    return res.status(200);
 }); 
 
 app.get('/hostA', (req, res) => {
@@ -55,7 +55,7 @@ app.get('/hostA', (req, res) => {
         ret = hostA; 
         hostA = "";
     }
-    res.status(200).send(JSON.stringify(ret)); 
+    return res.status(200).send(JSON.stringify(ret)); 
 }); 
 
 app.get('/hostB', (req, res) => {
@@ -64,17 +64,17 @@ app.get('/hostB', (req, res) => {
         ret = hostB; 
         hostB = "";
     }
-    res.status(200).send(JSON.stringify(ret));
+    return res.status(200).send(JSON.stringify(ret));
 }); 
 
 app.get('/resetA', (req, res) => {
     hostA = "";
-    res.status(200).send(JSON.stringify(hostB));
+    return res.status(200).send(JSON.stringify(hostB));
 }); 
 
 app.get('/resetB', (req, res) => {
     hostB = "";
-    res.status(200).send(JSON.stringify(hostB));
+    return res.status(200).send(JSON.stringify(hostB));
 });
 
 
