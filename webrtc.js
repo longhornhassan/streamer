@@ -4,6 +4,7 @@ var happens = (data) => {
   console.log(data);
 }
 
+const rt = "https://streamservice.herokuapp.com/"
 getUserMedia({ video: true, audio: true }, function (err, stream) {
   if (err) return console.error(err)
 
@@ -11,7 +12,8 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
   var peer = new Peer({
     initiator: location.hash === '#init', //true of not, first peer (address)
     trickle: false,
-    stream: stream
+    stream: stream,
+    config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] }
   })
 
   var num = 0; 
@@ -19,9 +21,9 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
   peer.on('signal', function (data) {
     var xhr = new XMLHttpRequest();
     //document.getElementById('yourId').value = JSON.stringify(data)
-    var origin = "https://streamservice.herokuapp.com/updateB"; 
+    var origin = rt+"/updateB"; 
     if(location.hash === '#init'){
-      origin = "https://streamservice.herokuapp.com/updateA";
+      origin = rt+"/updateA";
     }
 
     xhr.open("POST", origin, true);
@@ -35,9 +37,9 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
 
   var number = 1; 
   var makeConnection = setInterval(() => {
-      var origin = "https://streamservice.herokuapp.com/hostA"; 
+      var origin = rt+"/hostA"; 
       if(location.hash === '#init'){
-        origin = "https://streamservice.herokuapp.com/hostB";
+        origin = rt+"/hostB";
       }
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
@@ -50,9 +52,9 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
                 //reset server vars
                 var xhr2 = new XMLHttpRequest();
                 //document.getElementById('yourId').value = JSON.stringify(data)
-                var origin2 = "https://streamservice.herokuapp.com/resetA"; 
+                var origin2 = rt+"/resetA"; 
                 if(location.hash === '#init'){
-                  origin2 = "https://streamservice.herokuapp.com/resetB";
+                  origin2 = rt+"/resetB";
                 }
                 xhr2.open('GET', origin2, true);
 
