@@ -10036,7 +10036,7 @@ var happens = (data) => {
   console.log(data);
 }
 
-const rt = "https://streamservice.herokuapp.com/" 
+const rt = "https://streamservice.herokuapp.com"
 getUserMedia({ video: true, audio: true }, function (err, stream) {
   if (err) return console.error(err)
 
