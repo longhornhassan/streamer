@@ -71,7 +71,7 @@ getUserMedia({ video: true, audio: true }, function (err, stream) {
       }
       xhr.open('GET', origin, true);
       xhr.send(null);
-    }, 20000);
+    }, 5000);
  
 
   // document.getElementById('connect').addEventListener('click', function () {
