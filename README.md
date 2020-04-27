@@ -1,10 +1,5 @@
-# P2P Video Chat with JavaScript / WebRTC
-
-> [https://www.youtube.com/watch?v=ieBtXwHvoNk](https://www.youtube.com/watch?v=ieBtXwHvoNk)
-
-Install [io.js](https://iojs.org/en/index.html).
-
-Within this folder run the terminal command `npm install` to install the
-`dependencies` and `devDependencies`.
-
-Then run `npm start` to run the app.
+# Async Video Collaboration App 
+ 
+TODO: 
+    1. Recreate the connection issues between two home networks
+    2. Deploy a nodejs turn server -> https://www.npmjs.com/package/node-turn
